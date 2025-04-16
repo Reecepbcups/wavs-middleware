@@ -23,6 +23,11 @@ jobs:
          REPO_NAME=`echo "${{ github.repository }}" | awk -F'/' '{print $2}' | tr '[:upper:]' '[:lower:]'`
          echo "REPO_NAME=$REPO_NAME" >> $GITHUB_ENV
 
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1
+        with:
+            version: stable
+
       # build and publish package to ghcr (public) with codebase remaining private
       - name: Log in to the Container registry
         uses: docker/login-action@v2
