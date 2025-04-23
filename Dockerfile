@@ -3,6 +3,7 @@ USER root
 RUN apt update && apt install -yq jq curl
 
 COPY contracts /wavs/contracts
+RUN ls -la /wavs/contracts/lib
 RUN forge build --root /wavs/contracts
 
 RUN rm -rf /tmp
