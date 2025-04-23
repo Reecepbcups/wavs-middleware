@@ -1,4 +1,4 @@
-FROM ghcr.io/foundry-rs/foundry:latest
+FROM ghcr.io/foundry-rs/foundry:v1.0.0
 USER root
 RUN apt update && apt install -yq jq curl
 
